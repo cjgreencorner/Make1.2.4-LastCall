@@ -30,7 +30,7 @@ def main():
         if keuze == 1: #Dit gebeurd er als de gebruiker de keuze heeft gemaakt een zwak wachtwoord aan te maken
             print("Zwak wachtwoord:", random_wachtwoord(6, 2)) #Hier word het zwakke wachtwoord aangemaakt met 6 letters en 2 cijfers
 
-        if keuze == 2: #Dit gebeurd er als de gebruiker de keuze heeft gemaakt een sterk wachtwoord aan te maken
+        elif keuze == 2: #Dit gebeurd er als de gebruiker de keuze heeft gemaakt een sterk wachtwoord aan te maken
             print("Sterk wachtwoord:", random_wachtwoord(7, 4)) #Hier word het sterke wachtwoord aangemaakt met 7 letters en 4 cijfers
 
         elif keuze != '1' or '2': #Moest de keuze een ander cijfer zijn, komt er deze foutmelding en word het programma opnieuw gestard

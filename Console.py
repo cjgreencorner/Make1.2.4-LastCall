@@ -4,9 +4,7 @@
 """""""""""""""""""""
 # IMPORTS
 # from gpiozero.pins.pigpio import PiGPIOFactory
-import Wachtwoord
-import Rekenmachine
-import os
+import Wachtwoord, Rekenmachine
 
 # CONFIGURATIONS
 # IP = PiGPIOFactory(host='joel')
@@ -21,13 +19,15 @@ __status__ = "Supporter"
 # FUNCTIONS
 def main():
     print("1 = Rekenmachine")
+    print("2 = Random wachtwoord generator")
     keuze = int(input("Maak uw keuze: "))
     if keuze == 1:
         Rekenmachine.main()
-        os.system('cls')
         main()
     if keuze == 2:
         Wachtwoord.main()
+        main()
+
 
 
 if __name__ == '__main__':
