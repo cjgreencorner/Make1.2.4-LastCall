@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Make1.2.4-LastCall.iml" filepath="$PROJECT_DIR$/.idea/Make1.2.4-LastCall.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../guizero_oefeningen/.idea/guizero_oefeningen.iml" filepath="$PROJECT_DIR$/../guizero_oefeningen/.idea/guizero_oefeningen.iml" />
     </modules>
   </component>
 </project>
