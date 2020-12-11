@@ -4,7 +4,7 @@
 """""""""""""""""""""
 # IMPORTS
 # from gpiozero.pins.pigpio import PiGPIOFactory
-import Wachtwoord, Rekenmachine, Netwerk
+import Wachtwoord, Rekenmachine, Netwerk, Systeminfo
 import subprocess
 
 # CONFIGURATIONS
@@ -38,25 +38,25 @@ def main():
         Wachtwoord.main()
         main()
     if keuze == 3:
-        subprocess.Popen('update.ps1')
+        subprocess.check_output(["./update"])
         main()
     if keuze == 4:
-        subprocess.Popen('ipadress.ps1')
+        subprocess.check_output(["ifconfig"])
         main()
     if keuze == 5:
-        subprocess.Popen('systeminfo.ps1')
+        Systeminfo.main()
         main()
     if keuze == 6:
-        subprocess.Popen('wifi.ps1')
+        subprocess.call("./wifi")
         main()
     if keuze == 7:
         Netwerk.main()
         main()
     if keuze == 8:
-        subprocess.Popen('pinout.ps1')
+        subprocess.check_output(["gpio", "readall"])
         main()
     if keuze == 9:
-        subprocess.Popen('lamp.ps1')
+        subprocess.call("./lamp")
         main()
 
 if __name__ == '__main__':
