@@ -1,61 +1,56 @@
 #!/usr/bin/env python
 """""""""""""""""""""
-
+This Python script is multifunctional and has multiple scripts imported.
 """""""""""""""""""""
 # IMPORTS
-# from gpiozero.pins.pigpio import PiGPIOFactory
-import Wachtwoord, Rekenmachine, Netwerk, Systeminfo
-import subprocess
-
-# CONFIGURATIONS
-# IP = PiGPIOFactory(host='joel')
+import Rekenmachine, Wachtwoord, subprocess, Systeminfo, Netwerk # Imports from other scripts and also subprocess
 
 
 # AUTHORINFO
 __author__ = "Joel Chapon"
 __email__ = "joel.chapon@student.kdg.be"
-__status__ = "Supporter"
+__status__ = "Finished"
 
 
 # FUNCTIONS
 def main():
-    print("1 = Rekenmachine")
-    print("2 = Random wachtwoord generator")
+    print("1 = Calculator") # Some text for the user
+    print("2 = Random password generator")
     print("3 = Update RPi")
     print("4 = IP-Adress RPi")
-    print("5 = RPi Systeem Info")
-    print("6 = Verander Netwerkinstellingen")
-    print("7 = Netwerkscanner")
+    print("5 = System Info")
+    print("6 = Change Network Settings")
+    print("7 = Networkscanner")
     print("8 = GPIO-Pins RPi")
-    print("9 = Installeer volledige LAMP-stack")
+    print("9 = Install full LAMP-stack")
 
 
-    keuze = int(input("Maak uw keuze: "))
-    if keuze == 1:
-        Rekenmachine.main()
-        main()
-    if keuze == 2:
+    choice = int(input("Make a choice: ")) # Ask the user for a number
+    if choice == 1: # This happens if the user chose the first function
+        Rekenmachine.main() # Import the main function of the script
+        main() # After after running the main function of the 'Rekenmachine' function, restart the program
+    if choice == 2:
         Wachtwoord.main()
         main()
-    if keuze == 3:
-        subprocess.check_output(["./update"])
+    if choice == 3:
+        subprocess.check_output(["./update"]) # Execute a bash file
         main()
-    if keuze == 4:
-        subprocess.check_output(["ifconfig"])
+    if choice == 4:
+        subprocess.check_output(["ifconfig"]) # Show IP-Adress of the RPi
         main()
-    if keuze == 5:
+    if choice == 5:
         Systeminfo.main()
         main()
-    if keuze == 6:
+    if choice == 6:
         subprocess.call("./wifi")
         main()
-    if keuze == 7:
+    if choice == 7:
         Netwerk.main()
         main()
-    if keuze == 8:
+    if choice == 8:
         subprocess.check_output(["gpio", "readall"])
         main()
-    if keuze == 9:
+    if choice == 9:
         subprocess.call("./lamp")
         main()
 
